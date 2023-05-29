@@ -102,3 +102,31 @@
 //   console.log(`${value}: ${value}`);
 //   console.log(set);
 // });
+
+// TASK 1 ____________________________________________________________________________________
+
+//1.	Данные Жени [4, 5, 3, 11, 6, 2, 4, 1, 5, 9]
+//Данные Юли [2, 4, 5, 1, 13, 2, 15, 8, 3, 7]
+//2.	Данные Жени [3, 5, 9, 14, 1, 2, 6, 8, 3, 10]
+//Данные Юли [8, 2, 10, 1, 2, 5, 6, 3, 1, 4]
+
+const janArr = [4, 5, 3, 11, 6, 2, 4, 1, 5, 9];
+const ulArr = [2, 4, 5, 1, 13, 2, 15, 8, 3, 7];
+const janArr2 = [3, 5, 9, 14, 1, 2, 6, 8, 3, 10];
+const ulArr2 = [8, 2, 10, 1, 2, 5, 6, 3, 1, 4];
+
+const verifyCats = function (janArr, ulArr) {
+  const janArrCorrect = janArr.slice(1, -1);
+  console.log(janArr);
+  console.log(janArrCorrect);
+  const bothArr = [...janArrCorrect, ...ulArr];
+  bothArr.forEach(function (age, index) {
+    const ageCategory =
+      age >= 2 ? `Взрослая взрослая, ей ${age} лет` : `еще котенок`;
+    console.log(`Кошка №${index + 1} ${ageCategory}`);
+  });
+};
+
+verifyCats(janArr, ulArr);
+console.log('----------------------------------------------');
+verifyCats(janArr2, ulArr2);
