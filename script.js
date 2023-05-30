@@ -110,23 +110,57 @@
 //2.	Данные Жени [3, 5, 9, 14, 1, 2, 6, 8, 3, 10]
 //Данные Юли [8, 2, 10, 1, 2, 5, 6, 3, 1, 4]
 
-const janArr = [4, 5, 3, 11, 6, 2, 4, 1, 5, 9];
-const ulArr = [2, 4, 5, 1, 13, 2, 15, 8, 3, 7];
-const janArr2 = [3, 5, 9, 14, 1, 2, 6, 8, 3, 10];
-const ulArr2 = [8, 2, 10, 1, 2, 5, 6, 3, 1, 4];
+//const janArr = [4, 5, 3, 11, 6, 2, 4, 1, 5, 9];
+//const ulArr = [2, 4, 5, 1, 13, 2, 15, 8, 3, 7];
+//const janArr2 = [3, 5, 9, 14, 1, 2, 6, 8, 3, 10];
+//const ulArr2 = [8, 2, 10, 1, 2, 5, 6, 3, 1, 4];
 
-const verifyCats = function (janArr, ulArr) {
-  const janArrCorrect = janArr.slice(1, -1);
-  console.log(janArr);
-  console.log(janArrCorrect);
-  const bothArr = [...janArrCorrect, ...ulArr];
-  bothArr.forEach(function (age, index) {
-    const ageCategory =
-      age >= 2 ? `Взрослая взрослая, ей ${age} лет` : `еще котенок`;
-    console.log(`Кошка №${index + 1} ${ageCategory}`);
-  });
-};
+//const verifyCats = function (janArr, ulArr) {
+//  const janArrCorrect = janArr.slice(1, -1);
+//  console.log(janArr);
+//  console.log(janArrCorrect);
+//  const bothArr = [...janArrCorrect, ...ulArr];
+//  bothArr.forEach(function (age, index) {
+//    const ageCategory =
+//      age >= 2 ? `Взрослая взрослая, ей ${age} лет` : `еще котенок`;
+//    console.log(`Кошка №${index + 1} ${ageCategory}`);
+//  });
+//};
 
-verifyCats(janArr, ulArr);
-console.log('----------------------------------------------');
-verifyCats(janArr2, ulArr2);
+//verifyCats(janArr, ulArr);
+//console.log('----------------------------------------------');
+//verifyCats(janArr2, ulArr2);
+//const catAges = [7, 3, 2, 4, 1, 15, 8, 1, 9, 2];
+//const getAverageHumanAge = function (ages) {
+//  const peopleAges = ages.map(function (age) {
+//    if (age <= 2) {
+//      return age * 10;
+//    } else if (age >= 2) {
+//      return age * 7;
+//    }
+//  });
+//  console.log(peopleAges);
+//  const peopleMore = peopleAges
+//    .filter(age => age >= 18)
+//    .reduce((acc, age, index, array1) => {
+//      acc += age;
+
+//      return acc / array1.length;
+//    }, 0);
+//  console.log(peopleMore);
+//};
+
+//getAverageHumanAge(catAges);
+
+// Методы some() and every()____________________________________________________________
+
+const transactions = [300, 250, -500, 5000, -750, -180, 50, 1400, -350, -120];
+
+// some
+
+const hasWithdrawals = transactions.some(trans => trans > 550);
+console.log(hasWithdrawals);
+
+// every
+
+console.log(transactions.every(trans => trans > 0));
