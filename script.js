@@ -355,3 +355,16 @@ const withdrawl = accounts
   .flatMap(account => account.transactions)
   .filter(widh => widh <= -500).length;
 console.log(withdrawl);
+
+// Ex. 3
+
+const depositsAndWithdrawals = accounts
+  .flatMap(account => account.transactions)
+  .reduce(
+    (acc, trans) => {
+      trans > 0 ? (acc.depositsTotal += trans) : (acc.withdrawlsTotal += trans);
+      return acc;
+    },
+    { depositsTotal: 0, withdrawlsTotal: 0 }
+  );
+console.log(depositsAndWithdrawals);
