@@ -368,3 +368,20 @@ const depositsAndWithdrawals = accounts
     { depositsTotal: 0, withdrawlsTotal: 0 }
   );
 console.log(depositsAndWithdrawals);
+
+// Ex. 4
+
+const titleCase = function (string) {
+  const exeptions = ['с', 'в', 'для', 'на'];
+  const titleCase = string
+    .toLowerCase()
+    .split(' ')
+    .map(word =>
+      !exeptions.includes(word) ? word[0].toUpperCase() + word.slice(1) : word
+    )
+    .join(' ');
+  console.log(titleCase);
+};
+
+const string = 'Работа с массивами здесь';
+titleCase(string);
